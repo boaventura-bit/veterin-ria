@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico Veterinário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Menu Principal - Diagnóstico Veterinário</h1>
+    </header>
+    <main>
+        <button class="inicial" onclick="openDiagnosisForm()">Diagnosticar</button>
+        <button class="inicial" onclick="openAddDiseaseForm()">Cadastrar Doenças</button>
+        <button class="inicial" onclick="openHistory()">Histórico</button>
+        <button class="inicial" onclick="exitApp()">Sair</button>
+    </main>
+
+    <!-- Modal para Diagnóstico -->
+    <div id="diagnosis-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('diagnosis-modal')">&times;</span>
+            <h2>Diagnóstico de Doenças</h2>
+            <form id="diagnosis-form" class="form-layout">
+                <label for="animal-name">Nome do Animal:</label>
+                <input type="text" id="animal-name" placeholder="Digite o nome do animal" required>
+
+                <label for="animal-weight">Peso (kg):</label>
+                <input type="number" id="animal-weight" placeholder="Digite o peso" required>
+
+                <label for="animal-species">Espécie (cão/gato):</label>
+                <select id="animal-species" required>
+                    <option value="">Selecione</option>
+                    <option value="cão">Cão</option>
+                    <option value="gato">Gato</option>
+                </select>
+
+                <label for="animal-breed">Raça:</label>
+                <input type="text" id="animal-breed" placeholder="Digite a raça" required>
+
+                <label for="animal-symptoms">Sintomas (separe por vírgulas):</label>
+                <input type="text" id="animal-symptoms" placeholder="Ex: febre, tosse" required>
+
+                <button type="button" onclick="diagnose()">Diagnosticar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Cadastro de Doenças -->
+    <div id="disease-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('disease-modal')">&times;</span>
+            <h2>Cadastrar Nova Doença</h2>
+            <form id="disease-form" class="form-layout">
+                <label for="disease-name">Nome da Doença:</label>
+                <input type="text" id="disease-name" placeholder="Digite o nome da doença" required>
+
+                <label for="disease-species">Espécie (cão/gato):</label>
+                <select id="disease-species" required>
+                    <option value="">Selecione</option>
+                    <option value="cão">Cão</option>
+                    <option value="gato">Gato</option>
+                </select>
+
+                <label for="disease-symptoms">Sintomas (separe por vírgulas):</label>
+                <input type="text" id="disease-symptoms" placeholder="Ex: febre, tosse" required>
+
+                <button type="button" onclick="addDisease()">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Diagnóstico Veterinário. Todos os direitos reservados.</p>
+    </footer>    
+
+    <script src="script.js"></script>
+</body>
+</html>
