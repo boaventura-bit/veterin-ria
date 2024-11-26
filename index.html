@@ -8,19 +8,20 @@
 </head>
 <body>
     <header>
-        <h1>Menu Principal - Diagnóstico Veterinário</h1>
+        <h1>Diagnóstico Veterinário</h1>
     </header>
     <main>
         <button class="inicial" onclick="openDiagnosisForm()">Diagnosticar</button>
         <button class="inicial" onclick="openAddDiseaseForm()">Cadastrar Doenças</button>
+        <button class="inicial" onclick="openAddVeterinarianForm()">Cadastrar Veterinária</button>
         <button class="inicial" onclick="openHistory()">Histórico</button>
         <button class="inicial" onclick="exitApp()">Sair</button>
     </main>
 
     <!-- Modal para Diagnóstico -->
-    <div id="diagnosis-modal" class="modal">
+    <div id="diagnosis-modal" class="modal" role="dialog">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('diagnosis-modal')">&times;</span>
+            <button class="close" onclick="closeModal('diagnosis-modal')">&times;</button>
             <h2>Diagnóstico de Doenças</h2>
             <form id="diagnosis-form" class="form-layout">
                 <label for="animal-name">Nome do Animal:</label>
@@ -48,9 +49,9 @@
     </div>
 
     <!-- Modal para Cadastro de Doenças -->
-    <div id="disease-modal" class="modal">
+    <div id="disease-modal" class="modal" role="dialog">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('disease-modal')">&times;</span>
+            <button class="close" onclick="closeModal('disease-modal')">&times;</button>
             <h2>Cadastrar Nova Doença</h2>
             <form id="disease-form" class="form-layout">
                 <label for="disease-name">Nome da Doença:</label>
@@ -71,9 +72,61 @@
         </div>
     </div>
 
+    <!-- Modal para Cadastro de Veterinária -->
+    <div id="veterinarian-modal" class="modal" role="dialog">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal('veterinarian-modal')">&times;</button>
+            <h2>Cadastrar Veterinária</h2>
+            <form id="veterinarian-form" class="form-layout">
+                <label for="clinic-name">Nome da Clínica:</label>
+                <input type="text" id="clinic-name" placeholder="Digite o nome da clínica" required>
+
+                <label for="clinic-address">Endereço:</label>
+                <input type="text" id="clinic-address" placeholder="Digite o endereço" required>
+
+                <label for="clinic-phone">Telefone:</label>
+                <input type="text" id="clinic-phone" placeholder="Digite o telefone" required>
+
+                <label for="clinic-specialties">Especialidades (separe por vírgulas):</label>
+                <input type="text" id="clinic-specialties" placeholder="Ex: cardiologia, dermatologia" required>
+
+                <button type="button" onclick="addVeterinarian()">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Resultado do Diagnóstico -->
+    <div id="diagnosis-result-modal" class="modal" role="dialog">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal('diagnosis-result-modal')">&times;</button>
+            <h2>Resultado do Diagnóstico</h2>
+            <p id="result-animal-name">Nome: </p>
+            <p id="result-animal-weight">Peso: </p>
+            <p id="result-animal-species">Espécie: </p>
+            <p id="result-animal-breed">Raça: </p>
+            <p id="result-animal-symptoms">Sintomas: </p>
+            <p id="result-diagnosis">Diagnóstico: </p>
+            
+            <!-- Botões -->
+            <button onclick="exitApp()">Sair</button>
+            <button onclick="printDiagnosis()">Imprimir</button>
+        </div>
+    </div>
+
+    <!-- Modal para Histórico -->
+    <div id="history-modal" class="modal" role="dialog">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal('history-modal')">&times;</button>
+            <h2>Histórico de Diagnósticos</h2>
+            <ul id="history-list">
+                <!-- Itens de histórico serão inseridos aqui via JavaScript -->
+            </ul>
+        </div>
+    </div>
+
     <footer>
         <p>© 2024 Diagnóstico Veterinário. Todos os direitos reservados.</p>
-    </footer>    
+    </footer>
 
     <script src="script.js"></script>
 </body>

@@ -29,15 +29,15 @@ main {
 /* Botões do menu principal */
 button {
     margin: 10px;
-    padding: 8px 15px; /* Botões menores */
-    font-size: 14px; /* Texto menor */
+    padding: 8px 15px; 
+    font-size: 14px; 
     cursor: pointer;
     background-color: #B86132;
     color: #ffffff;
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s;
-    width: 200px; /* Largura menor */
+    width: 200px;
 }
 
 button:hover {
@@ -71,6 +71,8 @@ button:hover {
 
 .close {
     position: absolute;
+    width: 50px;
+    height: 50px;
     top: 10px;
     right: 15px;
     cursor: pointer;
@@ -105,21 +107,21 @@ button {
 }
 
 footer {
-    background-color: #B86132; /* Cor de fundo azul */
-    color: white; /* Texto branco */
-    text-align: center; /* Centraliza o texto */
-    padding: 10px 0; /* Espaçamento vertical */
-    position: fixed; /* Fixa no final da página */
+    background-color: #B86132; 
+    color: white; 
+    text-align: center; 
+    padding: 10px 0; 
+    position: fixed; 
     bottom: 0;
-    width: 100%; /* Ocupa toda a largura */
-    font-size: 14px; /* Tamanho de fonte menor */
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil no topo */
+    width: 100%; 
+    font-size: 14px; 
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     button {
-        width: 100%; /* Botões ocupam toda a largura em telas pequenas */
+        width: 100%; 
     }
 
     .modal-content {
